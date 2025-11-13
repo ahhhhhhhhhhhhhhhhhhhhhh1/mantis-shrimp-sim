@@ -49,39 +49,37 @@ func _physics_process(delta):
 	# Gravity
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-	if Input.is_action_just_pressed("Leftmouse") and Input.is_action_just_pressed("Rightmouse"):
-		superpunch()
-	if Input.is_action_just_pressed("Leftmouse"):
-		if Input.is_action_just_pressed("Rightmouse"):
+	if Input.is_action_just_pressed("LeftMouse"):
+		if Input.is_action_just_pressed("RightMouse"):
 			superpunch()
 		else:
 			leftpunch()
-	if Input.is_action_just_pressed("Rightmouse"):
-		if Input.is_action_just_pressed("Rightmouse"):
+	if Input.is_action_just_pressed("RightMouse"):
+		if Input.is_action_just_pressed("RightMouse"):
 			superpunch()
 		else:
 			rightpunch()
 	# Jump
 	if Input.is_action_just_pressed("ui_accept"):
 		velocity.y += jump_velocity
-	if Input.is_action_pressed("ball"):
+	if Input.is_action_pressed("Ball"):
 		$BallMode.visible = true
 	else:
 		$BallMode.visible = false
-	if Input.is_action_just_pressed("dash"):
+	if Input.is_action_just_pressed("Sprint"):
 		velocity += -transform.basis.z * 100
 	move_and_slide()
 	# Movement controls
 	var move_dir = 0.0
-	if Input.is_action_pressed("forward"):
+	if Input.is_action_pressed("w"):
 		move_dir += 1.0
-	if Input.is_action_pressed("backward"):
+	if Input.is_action_pressed("s"):
 		move_dir -= 1.0
 
 	var turn_dir = 0.0
-	if Input.is_action_pressed("left"):
+	if Input.is_action_pressed("a"):
 		turn_dir += 1.0
-	if Input.is_action_pressed("right"):
+	if Input.is_action_pressed("d"):
 		turn_dir -= 1.0
 
 	# Rotate character (left/right keys)

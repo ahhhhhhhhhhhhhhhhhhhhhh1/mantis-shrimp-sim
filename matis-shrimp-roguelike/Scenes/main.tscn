@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://duo1651i3x2op"]
+[gd_scene load_steps=5 format=3 uid="uid://duo1651i3x2op"]
 
-[ext_resource type="PackedScene" uid="uid://krhgf8inxe2a" path="res://Scenes/player.tscn" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://dgkqibwmyl8wy" path="res://Scenes/floor.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://krhgf8inxe2a" path="res://Scenes/player.tscn" id="1_8gbba"]
+[ext_resource type="PackedScene" uid="uid://dgkqibwmyl8wy" path="res://Scenes/floor.tscn" id="2_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://bsxoapx446ag3" path="res://Scenes/gordans_scene.tscn" id="3_kry3j"]
 
 [sub_resource type="Environment" id="Environment_0xm2m"]
 background_mode = 1
@@ -14,10 +15,13 @@ reflected_light_source = 1
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0xm2m")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_ig7tw")]
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_8gbba")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5844102, 0)
 
-[node name="StaticBody3D" parent="." instance=ExtResource("2_0xm2m")]
+[node name="StaticBody3D" parent="." instance=ExtResource("2_jjvhh")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.45580906, 0.8900776, 0, -0.8900776, 0.45580906, 0, 1.9368005, 0)
+
+[node name="Gordans scene" parent="." instance=ExtResource("3_kry3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7236686, 1.6595434, 1.5067003)
