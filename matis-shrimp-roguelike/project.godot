@@ -13,7 +13,6 @@ config_version=5
 config/name="matis shrimp roguelike"
 run/main_scene="uid://duo1651i3x2op"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [input]
 
