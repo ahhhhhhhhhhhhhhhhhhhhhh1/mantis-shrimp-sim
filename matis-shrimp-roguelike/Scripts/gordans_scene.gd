@@ -1,16 +1,16 @@
 extends CharacterBody3D
-
-@export var speed = 10.0
+@export var cam : Node
+const speed = 10.0
 @export var gravity = 1.0
 @export var jump_velocity = 1.2
 @export var mouse_sensitivity = 0.003
-@export var turn_speed = 6.0   # How fast to rotate left/right
+var turn_speed = 6.0
 @onready var leftarm = $LeftArm
 @onready var rightarm = $RightArm
 @onready var camera = $Pivot/Camera3D
 @onready var lefttimer = $Leftpunchtimer
 @onready var righttimer = $Rightpunchtimer
-@export var ball_mode = false
+var ball_mode = false
 var objects = [] 
 
 func _ready():
@@ -55,7 +55,7 @@ func _physics_process(delta):
 		else:
 			leftpunch()
 	if Input.is_action_just_pressed("RightMouse"):
-		if Input.is_action_just_pressed("RightMouse"):
+		if Input.is_action_just_pressed("LeftMouse"):
 			superpunch()
 		else:
 			rightpunch()
@@ -64,23 +64,27 @@ func _physics_process(delta):
 		velocity.y += jump_velocity
 	if Input.is_action_pressed("Ball"):
 		$BallMode.visible = true
+		ball_mode = true
 	else:
+		ball_mode = false
 		$BallMode.visible = false
 	if Input.is_action_just_pressed("Sprint"):
-		velocity += -transform.basis.z * 100
+		velocity += get_camera_direction_vector(cam, 5)
 	move_and_slide()
 	# Movement controls
 	var move_dir = 0.0
-	if Input.is_action_pressed("w"):
-		move_dir += 1.0
-	if Input.is_action_pressed("s"):
-		move_dir -= 1.0
-
 	var turn_dir = 0.0
-	if Input.is_action_pressed("a"):
-		turn_dir += 1.0
-	if Input.is_action_pressed("d"):
-		turn_dir -= 1.0
+	if ball_mode == false:
+		if Input.is_action_pressed("w"):
+			move_dir += 1.0
+		if Input.is_action_pressed("s"):
+			move_dir -= 1.0
+			turn_dir = 0.0
+		if Input.is_action_pressed("a"):
+			turn_dir += 1.0
+		if Input.is_action_pressed("d"):
+			turn_dir -= 1.0
+
 
 	# Rotate character (left/right keys)
 	rotation.y += turn_dir * turn_speed * delta
@@ -101,3 +105,7 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, speed)
 
 	move_and_slide()
+
+func get_camera_direction_vector(came: Camera3D, speed: float) -> Vector3:
+	var forward = -came.global_transform.basis.z
+	return forward.normalized() * speed

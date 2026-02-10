@@ -22,9 +22,14 @@ material = SubResource("StandardMaterial3D_f54cj")
 
 [sub_resource type="SphereMesh" id="SphereMesh_m06q3"]
 
-[node name="Gordans scene" type="CharacterBody3D" node_paths=PackedStringArray("cam")]
+[node name="Gordans scene" type="CharacterBody3D"]
 script = ExtResource("1_gbcld")
-cam = NodePath("Pivot/Camera3D")
+speed = null
+gravity = null
+jump_velocity = null
+mouse_sensitivity = null
+turn_speed = null
+ball_mode = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-0.9998783, -0.006980549, -0.013962128, 0.013961791, 9.7473436e-05, -0.9999025, 0.0069812294, -0.99997574, -6.10304e-10, 0.008003701, 1.1767728e-05, 0.8414633)
