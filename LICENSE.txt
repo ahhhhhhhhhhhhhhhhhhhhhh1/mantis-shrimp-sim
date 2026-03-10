@@ -1,0 +1,61 @@
+END USER LICENSE AGREEMENT (EULA)
+Last Updated: 2026
+
+This End User License Agreement (“Agreement”) is a legal agreement between you (“User”) and Tehe Productions (“Licensor”) governing the installation and use of the software, including all associated files, content, updates, patches, and documentation (collectively, the “Software”).
+
+By installing, copying, or otherwise using the Software, you agree to be bound by the terms of this Agreement. If you do not agree to these terms, do not install or use the Software.
+
+License Grant
+Subject to the terms of this Agreement, the Licensor grants you a limited, non-exclusive, non-transferable, revocable license to install and use the Software for personal or commercial use.
+This license does not transfer ownership of the Software. All rights not expressly granted are reserved by the Licensor.
+
+Ownership and Intellectual Property
+The Software and all associated intellectual property rights, including but not limited to code, artwork, audio, documentation, and trademarks, remain the exclusive property of the Licensor.
+The Software is licensed, not sold.
+
+Restrictions
+You agree that you will not:
+
+Copy, reproduce, distribute, or publicly display the Software except as expressly permitted by this Agreement.
+
+Modify, adapt, translate, or create derivative works based on the Software without written permission.
+
+Reverse engineer, decompile, or disassemble the Software except where such actions are expressly permitted by applicable law.
+
+Remove, alter, or obscure copyright notices or proprietary markings.
+
+Use the Software in any way that violates applicable laws or regulations.
+
+Updates and Patches
+The Licensor may provide updates, patches, or additional content at their discretion. Such updates may be required to continue using the Software and will be governed by this Agreement unless accompanied by separate terms.
+
+Online Features
+If the Software includes online functionality, the Licensor may modify, suspend, or discontinue online services at any time without notice.
+The Licensor is not responsible for service interruptions, data loss, or network-related issues.
+
+User-Generated Content
+If the Software allows you to create or share content, you grant the Licensor a non-exclusive, worldwide, royalty-free license to use, reproduce, distribute, and display such content for purposes related to the operation and promotion of the Software.
+You remain responsible for any content you create or share.
+
+Termination
+This Agreement is effective until terminated. It will automatically terminate if you fail to comply with any of its terms.
+Upon termination, you must cease all use of the Software and delete all copies in your possession.
+
+Disclaimer of Warranty
+The Software is provided “AS IS” and “AS AVAILABLE” without warranties of any kind.
+To the fullest extent permitted by law, the Licensor disclaims all warranties, express or implied, including but not limited to merchantability, fitness for a particular purpose, and noninfringement.
+
+Limitation of Liability
+To the maximum extent permitted by law, the Licensor shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to the use of the Software.
+In no event shall the Licensor’s total liability exceed the amount paid for the Software, if any.
+
+Governing Law
+This Agreement shall be governed by and interpreted in accordance with the laws applicable in the Licensor’s jurisdiction, without regard to conflict-of-law provisions.
+
+Severability
+If any provision of this Agreement is found to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.
+
+Entire Agreement
+This Agreement constitutes the entire agreement between the User and the Licensor regarding the Software and supersedes any prior agreements or understandings.
+
+By installing or using the Software, you acknowledge that you have read and understood this Agreement and agree to be bound by its terms.
