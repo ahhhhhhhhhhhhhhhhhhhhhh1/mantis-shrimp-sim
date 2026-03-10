@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=3 uid="uid://dtd83ttuubiwn"]
+
+[ext_resource type="Texture2D" uid="uid://ceumkvcyyhp7y" path="res://textures/4K-brown_sand_plaster-diffuse.jpg" id="1_7f80w"]
+[ext_resource type="Texture2D" uid="uid://bb1kmqd38djox" path="res://textures/4K-brown_sand_plaster-ao.jpg" id="2_42q8f"]
+[ext_resource type="Texture2D" uid="uid://ckk1erro88xus" path="res://textures/4K-brown_sand_plaster-normal.jpg" id="3_2nc7w"]
+[ext_resource type="Texture2D" uid="uid://bcfvaf3kle5n7" path="res://textures/4K-brown_sand_plaster-displacement.jpg" id="3_vjxkb"]
+[ext_resource type="PackedScene" uid="uid://rysl8cpnevtl" path="res://Scenes/glass.tscn" id="5_2nc7w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjxkb"]
+albedo_texture = ExtResource("1_7f80w")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6c1wy"]
+albedo_texture = ExtResource("1_7f80w")
+metallic_specular = 0.17
+normal_enabled = true
+normal_texture = ExtResource("3_2nc7w")
+ao_enabled = true
+ao_texture = ExtResource("2_42q8f")
+heightmap_enabled = true
+heightmap_scale = 16.0
+heightmap_texture = ExtResource("3_vjxkb")
+
+[sub_resource type="QuadMesh" id="QuadMesh_how3p"]
+material = SubResource("StandardMaterial3D_6c1wy")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.67, 0, 0, 0, -2.0413219e-07, 4.67, 0, -4.67, -2.0413219e-07, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vjxkb")
+mesh = SubResource("QuadMesh_how3p")
+
+[node name="MeshInstance3D2" parent="MeshInstance3D" instance=ExtResource("5_2nc7w")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.5)
+skeleton = NodePath("../..")

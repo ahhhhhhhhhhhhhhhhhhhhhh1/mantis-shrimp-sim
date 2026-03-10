@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4ag8c5fhoqeg"]
+
+[ext_resource type="PackedScene" uid="uid://dtd83ttuubiwn" path="res://Scenes/tank.tscn" id="1_1gcgc"]
+
+[sub_resource type="Environment" id="Environment_qaxfr"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qaxfr")
+
+[node name="Node3D" parent="." instance=ExtResource("1_1gcgc")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.34760666, 0.9376404, 0, -0.9376404, 0.34760666, 0, 5.4081807, 1.94279)
+light_energy = 6.333
+spot_range = 8.830927
+spot_angle_attenuation = 0.32987693
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.8654139, 0, 0.5010577, 0, 1, 0, -0.5010577, 0, 0.8654139, 0.084874325, 0.7506092, 1.5217737)
