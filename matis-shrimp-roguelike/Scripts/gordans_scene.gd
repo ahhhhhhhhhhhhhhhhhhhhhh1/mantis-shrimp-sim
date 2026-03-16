@@ -70,7 +70,7 @@ func superpunch():
 		
 func _physics_process(delta):
 	if not is_on_floor():
-		velocity.y -= gravity * delta
+		velocity.y -= delta
 	if Input.is_action_just_pressed("LeftMouse"):
 		if Input.is_action_just_pressed("RightMouse"):
 			superpunch()
