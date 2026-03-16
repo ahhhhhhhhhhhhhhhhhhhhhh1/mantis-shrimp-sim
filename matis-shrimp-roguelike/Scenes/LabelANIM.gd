@@ -1,5 +1,5 @@
-extends Label3D
-
+extends Node
+"""
 func _on_ready() -> void:
 	await get_tree().create_timer(0.3).timeout
 	var tween = create_tween()
@@ -9,3 +9,5 @@ func _on_ready() -> void:
 	
 	await tween.finished
 	queue_free()
+
+"""

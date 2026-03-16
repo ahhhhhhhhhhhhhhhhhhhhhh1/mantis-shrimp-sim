@@ -1,16 +1,16 @@
 extends CharacterBody3D
 @export var cam : Node
 const speed = 10.0
-@export var gravity = 1.0
-@export var jump_velocity = 1.2
-@export var mouse_sensitivity = 0.003
+const gravity = 1.0
+var jump_velocity = 1.2
+const mouse_sensitivity = 0.003
 var turn_speed = 6.0
 @onready var leftarm = $LeftArm
 @onready var rightarm = $RightArm
 @onready var camera = $Pivot/Camera3D
 @onready var lefttimer = $Leftpunchtimer
 @onready var righttimer = $Rightpunchtimer
-@onready var enemydetection = $EnemyDetection 
+@onready var enemydetection = $Detect/EnemyDetection
 var leftpunching = false
 var hashit = false
 var rightpunching = false
@@ -41,11 +41,11 @@ func leftpunch():
 		lefttimer.start()
 		hashit = false
 		
-func damage(dmgamout):
+func damage(dmgamount):
 	if global.player_health > 0:
-		global.player_health -= dmgamout
+		global.player_health -= dmgamount
 	if global.player_health <= 0:
-		get_tree().change_scene_to_file("res://game_over.tscn")
+		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 func rightpunch():
 	if righttimer.time_left <= 0 and rightarm.position.z > -1:
 		rightpunching = true
@@ -70,6 +70,7 @@ func superpunch():
 		
 func _physics_process(delta):
 	if not is_on_floor():
+		print(velocity.y, gravity, delta)
 		velocity.y -= gravity * delta
 	if Input.is_action_just_pressed("LeftMouse"):
 		if Input.is_action_just_pressed("RightMouse"):
@@ -140,9 +141,9 @@ func _physics_process(delta):
 						body.damagetoenemy(30)
 						await get_tree().create_timer(0.3).timeout
 		
-func get_camera_direction_vector(came: Camera3D, speed: float) -> Vector3:
+func get_camera_direction_vector(came: Camera3D, sped: float) -> Vector3:
 	var forward = -came.global_transform.basis.z
-	return forward.normalized() * speed
+	return forward.normalized() * sped
 	
 
 

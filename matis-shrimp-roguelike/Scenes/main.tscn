@@ -19,9 +19,6 @@ environment = SubResource("Environment_0xm2m")
 
 [node name="Gordans scene" parent="." instance=ExtResource("3_kry3j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7236686, 1.6595434, 1.5067003)
-gravity = null
-jump_velocity = null
-mouse_sensitivity = null
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_8gbba")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5844102, 0)
