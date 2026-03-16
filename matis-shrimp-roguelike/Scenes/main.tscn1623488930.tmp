@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dgkqibwmyl8wy" path="res://Scenes/floor.tscn" id="2_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://bsxoapx446ag3" path="res://Scenes/gordans_scene.tscn" id="3_kry3j"]
 [ext_resource type="PackedScene" uid="uid://dcqjxixgi08bb" path="res://Scenes/enemy.tscn" id="4_jjvhh"]
-[ext_resource type="PackedScene" uid="uid://cy8kveutumw31" path="res://Scenes/ui.tscn" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://cy8kveutumw31" path="res://ui.tscn" id="5_kry3j"]
 
 [sub_resource type="Environment" id="Environment_0xm2m"]
 background_mode = 1
@@ -19,9 +19,6 @@ environment = SubResource("Environment_0xm2m")
 
 [node name="Gordans scene" parent="." instance=ExtResource("3_kry3j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7236686, 1.6595434, 1.5067003)
-gravity = null
-jump_velocity = null
-mouse_sensitivity = null
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_8gbba")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5844102, 0)
@@ -33,29 +30,5 @@ transform = Transform3D(1, 0, 0, 0, 0.45580906, 0.8900776, 0, -0.8900776, 0.4558
 
 [node name="Enemy" parent="." instance=ExtResource("4_jjvhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9850297, 1.1586685, -1.2027864)
-
-[node name="Enemy2" parent="." instance=ExtResource("4_jjvhh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9850297, 1.1586685, -13.9522295)
-
-[node name="Enemy3" parent="." instance=ExtResource("4_jjvhh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9850297, 1.1586685, -8.218824)
-
-[node name="Enemy4" parent="." instance=ExtResource("4_jjvhh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9850297, 1.1586685, -17.859022)
-
-[node name="Enemy5" parent="." instance=ExtResource("4_jjvhh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9850297, 1.1586685, -21.940224)
-
-[node name="Enemy6" parent="." instance=ExtResource("4_jjvhh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9850297, 1.1586685, -25.970106)
-
-[node name="Enemy7" parent="." instance=ExtResource("4_jjvhh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9850297, 1.1586685, -31.93373)
-
-[node name="Enemy8" parent="." instance=ExtResource("4_jjvhh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9850297, 1.1586685, -37.524128)
-
-[node name="Enemy9" parent="." instance=ExtResource("4_jjvhh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9850297, 1.1586685, -42.383823)
 
 [node name="Ui" parent="." instance=ExtResource("5_kry3j")]

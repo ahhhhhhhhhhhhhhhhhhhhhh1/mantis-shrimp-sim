@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bsxoapx446ag3"]
+[gd_scene load_steps=10 format=3 uid="uid://bsxoapx446ag3"]
 
 [ext_resource type="Script" uid="uid://bwbmbcynbo2xx" path="res://Scripts/gordans_scene.gd" id="1_gbcld"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7mpfh"]
-radius = 0.8305664
-height = 4.644699
+radius = 0.4482422
+height = 2.2165527
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mpfh"]
 albedo_color = Color(0.95016307, 0.6582445, 0.45287693, 1)
@@ -23,20 +23,15 @@ material = SubResource("StandardMaterial3D_f54cj")
 [sub_resource type="SphereMesh" id="SphereMesh_m06q3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7mpfh"]
-size = Vector3(1.6736984, 1.163147, 1.9130402)
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f54cj"]
-radius = 1.2753906
-height = 5.0722046
+size = Vector3(1, 1, 1.65625)
 
 [node name="Gordans scene" type="CharacterBody3D" node_paths=PackedStringArray("cam")]
 script = ExtResource("1_gbcld")
 cam = NodePath("Pivot/Camera3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(-0.9998783, -0.006980549, -0.013962128, 0.013961791, 9.7473436e-05, -0.9999025, 0.0069812294, -0.99997574, -6.10304e-10, 0.008459957, 0.029743224, 0.9068227)
+transform = Transform3D(-0.9998783, -0.006980549, -0.013962128, 0.013961791, 9.7473436e-05, -0.9999025, 0.0069812294, -0.99997574, -6.10304e-10, 0.008003701, 1.1767728e-05, 0.8414633)
 shape = SubResource("CapsuleShape3D_7mpfh")
-metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.99990547, -0.013752267, 0.000114733244, 0, -0.008342571, -0.9999652, 0.013752744, -0.9998708, 0.008341785, 0.008846446, 0, 0.9621879)
@@ -145,14 +140,6 @@ mesh = SubResource("SphereMesh_m06q3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0054729)
 
 [node name="EnemyDetection" type="CollisionShape3D" parent="Detect"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.124866486, 0.38339233, -2.1038072)
 shape = SubResource("BoxShape3D_7mpfh")
 
-[node name="DetectPart2" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectPart2"]
-transform = Transform3D(1, 0, 0, 0, 0.06547278, 0.99785435, 0, -0.99785435, 0.06547278, 0, -0.049078614, 0.74799484)
-shape = SubResource("CapsuleShape3D_f54cj")
-
-[connection signal="body_entered" from="Detect" to="." method="_on_detect_body_entered"]
-[connection signal="body_entered" from="DetectPart2" to="." method="_on_detect_part_2_body_entered"]
+[connection signal="area_entered" from="Detect" to="." method="_on_detect_area_entered"]
