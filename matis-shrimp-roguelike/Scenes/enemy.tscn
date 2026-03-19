@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dcqjxixgi08bb"]
 
 [ext_resource type="Script" uid="uid://dlfiofs621f3s" path="res://Scenes/enemy.gd" id="1_hghv2"]
-[ext_resource type="Script" uid="uid://cbbyp7hjlfjn3" path="res://Scenes/LabelANIM.gd" id="2_1f0kj"]
+[ext_resource type="Script" uid="uid://cbbyp7hjlfjn3" path="res://Scripts/LabelANIM.gd" id="2_1f0kj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ne65n"]
 
