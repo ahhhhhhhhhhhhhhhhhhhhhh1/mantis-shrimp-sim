@@ -1,0 +1,55 @@
+[gd_scene load_steps=11 format=3 uid="uid://bfig35ws52cjs"]
+
+[ext_resource type="Shader" uid="uid://bxykrcbgx00l4" path="res://clam flashbang/tehe.gdshader" id="1_noarx"]
+[ext_resource type="Script" uid="uid://biv3hv6ktxqhg" path="res://clam flashbang/camera_3d.gd" id="2_a0tk4"]
+[ext_resource type="Texture2D" uid="uid://brcbfn1odehki" path="res://icon.svg" id="3_a0tk4"]
+[ext_resource type="Shader" uid="uid://doigtdwke666p" path="res://clam flashbang/more tehe.gdshader" id="3_r3fl7"]
+[ext_resource type="AudioStream" uid="uid://br3bnhprlsjyy" path="res://clam flashbang/Blue Disco.mp3" id="5_5wqn6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r3fl7"]
+shader = ExtResource("1_noarx")
+
+[sub_resource type="Sky" id="Sky_jka67"]
+sky_material = SubResource("ShaderMaterial_r3fl7")
+
+[sub_resource type="Environment" id="Environment_i5arm"]
+background_mode = 2
+sky = SubResource("Sky_jka67")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jka67"]
+shader = ExtResource("3_r3fl7")
+shader_parameter/a = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_r3fl7"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_i5arm")
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("no", "player")]
+script = ExtResource("2_a0tk4")
+no = NodePath("Control/Icon")
+player = NodePath("AudioStreamPlayer2D")
+
+[node name="Control" type="Control" parent="Camera3D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Icon" type="Sprite2D" parent="Camera3D/Control"]
+material = SubResource("ShaderMaterial_jka67")
+position = Vector2(575, 323.99997)
+scale = Vector2(9.015625, 5.0781245)
+texture = ExtResource("3_a0tk4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Camera3D"]
+stream = ExtResource("5_5wqn6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.3386064)
+mesh = SubResource("BoxMesh_r3fl7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.7937251, 0.6082767, 0, -0.6082767, 0.7937251, 0, 0, 2.5547957)
