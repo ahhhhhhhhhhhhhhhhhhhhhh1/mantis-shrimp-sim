@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://cy8kveutumw31"]
+
+[ext_resource type="Script" uid="uid://ckvxvp26gmuor" path="res://Scripts/label.gd" id="1_fyqef"]
+[ext_resource type="FontFile" uid="uid://cc16wr3xt01ha" path="res://Assets/Fonts/ArchivoBlack-Regular.ttf" id="1_m6e0p"]
+[ext_resource type="Script" uid="uid://dvfmce3ohwr3x" path="res://Scripts/health.gd" id="3_27fn8"]
+[ext_resource type="Script" uid="uid://btqvetay2abci" path="res://Scripts/health_indicator.gd" id="3_nltto"]
+
+[node name="Ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="SandDollar" type="Label" parent="."]
+modulate = Color(0.68235296, 0.6784314, 0, 0.96862745)
+texture_filter = 1
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 71.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_m6e0p")
+theme_override_font_sizes/font_size = 30
+text = "67"
+script = ExtResource("1_fyqef")
+
+[node name="HealthIndicator" type="Polygon2D" parent="."]
+position = Vector2(9.999998, 560)
+scale = Vector2(298, 45.00004)
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(0, 0, 1, 0, 1, 1, 0, 1)
+script = ExtResource("3_nltto")
+
+[node name="Health" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 12.0
+offset_top = 560.0
+offset_right = 211.0
+offset_bottom = 655.0
+theme_override_font_sizes/font_size = 30
+text = "67"
+script = ExtResource("3_27fn8")
+
+[node name="Healthbar" type="Node" parent="."]
+
+[node name="Polygon2D2" type="Polygon2D" parent="Healthbar"]
+position = Vector2(-2970, -2239.9316)
+scale = Vector2(298, 4.999878)
+polygon = PackedVector2Array(10, 560, 10, 559, 11, 559, 11, 560)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Healthbar"]
+position = Vector2(-2970, -2190)
+scale = Vector2(298, 4.999878)
+polygon = PackedVector2Array(10, 560, 10, 559, 11, 559, 11, 560, 10.6987915, 560)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Healthbar"]
+polygon = PackedVector2Array(10, 610, 5, 610, 5, 555, 10, 555)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Healthbar"]
+position = Vector2(303, 0)
+polygon = PackedVector2Array(10, 610, 5, 610, 5, 555, 10, 555)
+
+[connection signal="ready" from="SandDollar" to="SandDollar" method="_on_ready"]

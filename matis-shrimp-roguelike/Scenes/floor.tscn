@@ -3,13 +3,15 @@
 [sub_resource type="PlaneMesh" id="PlaneMesh_ryoud"]
 size = Vector2(20, 20)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_oj3tl"]
-points = PackedVector3Array(10.154754, 0.15866803, 10.154754, -10.154754, -0.15866803, -10.154754, -10.154754, 0.15866803, -10.154754, 10.154754, -0.15866803, -10.154754, -10.154754, -0.15866803, 10.154754, -10.154754, 0.15866803, 10.154754, 10.154754, 0.15866803, -10.154754, 10.154754, -0.15866803, 10.154754)
+[sub_resource type="BoxShape3D" id="BoxShape3D_ik5og"]
+size = Vector3(245.78429, 1.2200928, 243.85947)
 
 [node name="StaticBody3D" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(12.579825, 0, 0, 0, 1, 0, 0, 0, 12.356485, 0, 0, 0)
 mesh = SubResource("PlaneMesh_ryoud")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_oj3tl")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0215836, 0.11004639, 1.3657074)
+shape = SubResource("BoxShape3D_ik5og")

@@ -23,7 +23,7 @@ func _unhandled_input(event):
 
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
-	if Input.is_action_just_pressed("dash"):
+	if Input.is_action_just_pressed("Sprint"):
 		velocity += get_camera_direction_vector(cam, dash_vel)
 	
 	if is_on_floor():

@@ -1,0 +1,139 @@
+[gd_scene load_steps=9 format=3 uid="uid://bsxoapx446ag3"]
+
+[ext_resource type="Script" uid="uid://bwbmbcynbo2xx" path="res://Scripts/gordans_scene.gd" id="1_gbcld"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7mpfh"]
+radius = 0.4482422
+height = 2.2165527
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mpfh"]
+albedo_color = Color(0.95016307, 0.6582445, 0.45287693, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7mpfh"]
+material = SubResource("StandardMaterial3D_7mpfh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f54cj"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_f54cj"]
+material = SubResource("StandardMaterial3D_f54cj")
+
+[sub_resource type="SphereMesh" id="SphereMesh_7mpfh"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_m06q3"]
+
+[node name="Gordans scene" type="CharacterBody3D"]
+script = ExtResource("1_gbcld")
+speed = null
+gravity = null
+jump_velocity = null
+mouse_sensitivity = null
+turn_speed = null
+ball_mode = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.9998783, -0.006980549, -0.013962128, 0.013961791, 9.7473436e-05, -0.9999025, 0.0069812294, -0.99997574, -6.10304e-10, 0.008003701, 1.1767728e-05, 0.8414633)
+shape = SubResource("CapsuleShape3D_7mpfh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.99990547, -0.013752267, 0.000114733244, 0, -0.008342571, -0.9999652, 0.013752744, -0.9998708, 0.008341785, 0.008846446, 0, 0.9621879)
+mesh = SubResource("CapsuleMesh_7mpfh")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.7999243, -0.011750645, 0.005716499, -0.002335916, -0.32634413, -0.7561971, 0.010751365, -0.94517803, 0.26102334, 0.021182904, 0.20059514, 1.8591202)
+mesh = SubResource("CapsuleMesh_7mpfh")
+
+[node name="Legs" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.091503516, 0.080623895, 0.0014339094, 0.04031779, 0.18258044, 0.006369226, 0.0012585407, 0.012812374, -0.09978664, -0.51369375, -0.36641774, 0.96967125)
+mesh = SubResource("CapsuleMesh_7mpfh")
+
+[node name="Legs2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.091503516, 0.080623895, 0.0014339094, 0.04031779, 0.18258044, 0.006369226, 0.0012585407, 0.012812374, -0.09978664, -0.51030076, -0.36641774, 1.2163615)
+mesh = SubResource("CapsuleMesh_7mpfh")
+
+[node name="Legs3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.091503516, 0.080623895, 0.0014339094, 0.04031779, 0.18258044, 0.006369226, 0.0012585407, 0.012812374, -0.09978664, -0.50701684, -0.36641774, 1.4551234)
+mesh = SubResource("CapsuleMesh_7mpfh")
+
+[node name="Legs4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.091503516, 0.080623895, 0.0014339094, 0.04031779, 0.18258044, 0.006369226, 0.0012585407, 0.012812374, -0.09978664, -0.5174677, -0.36641774, 0.69528955)
+mesh = SubResource("CapsuleMesh_7mpfh")
+
+[node name="Legs5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.091503516, 0.080623895, 0.0014339094, 0.04031779, 0.18258044, 0.006369226, 0.0012585407, 0.012812374, -0.09978664, -0.52039886, -0.36641774, 0.48217598)
+mesh = SubResource("CapsuleMesh_7mpfh")
+
+[node name="Legs6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.09145152, -0.08086385, 0.0013723916, 0.040270418, 0.1826105, 0.0064532333, -0.003862234, -0.010697827, 0.09978215, 0.4919613, -0.36641774, 0.46686986)
+mesh = SubResource("CapsuleMesh_7mpfh")
+
+[node name="Legs7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.09145152, -0.08086385, 0.0013723916, 0.040270418, 0.1826105, 0.0064532333, -0.003862234, -0.010697827, 0.09978215, 0.49485213, -0.36641774, 0.6770506)
+mesh = SubResource("CapsuleMesh_7mpfh")
+
+[node name="Legs8" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.09145152, -0.08086385, 0.0013723916, 0.040270418, 0.1826105, 0.0064532333, -0.003862234, -0.010697827, 0.09978215, 0.49827582, -0.36641774, 0.9259702)
+mesh = SubResource("CapsuleMesh_7mpfh")
+
+[node name="Legs9" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.09145152, -0.08086385, 0.0013723916, 0.040270418, 0.1826105, 0.0064532333, -0.003862234, -0.010697827, 0.09978215, 0.5014423, -0.36641774, 1.1561912)
+mesh = SubResource("CapsuleMesh_7mpfh")
+
+[node name="Legs10" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.09145152, -0.08086385, 0.0013723916, 0.040270418, 0.1826105, 0.0064532333, -0.003862234, -0.010697827, 0.09978215, 0.50506437, -0.36641774, 1.4195412)
+mesh = SubResource("CapsuleMesh_7mpfh")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.99990547, -0.012492648, -0.005750741, 8.7548074e-10, 0.4181524, -0.90837675, 0.013752736, -0.9082909, -0.4181129, -0.007822161, 0.31705236, -0.24971965)
+mesh = SubResource("CapsuleMesh_7mpfh")
+
+[node name="LeftArm" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.29040155, 0.10426698, 0.056253586, 2.797278e-10, 0.11508933, -0.2930228, -0.13325064, -0.22723565, -0.122597, 0.561, 0, 0)
+mesh = SubResource("CapsuleMesh_7mpfh")
+
+[node name="RightArm" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.3129109, -0.050563164, -0.027279552, 4.6070485e-09, 0.1150893, -0.29302278, 0.06461849, -0.24484898, -0.13209958, -0.564, 0, 0)
+mesh = SubResource("CapsuleMesh_7mpfh")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.09999055, -0.0012492705, -0.0005750759, -3.6893702e-10, 0.04181525, -0.09083769, 0.0013752737, -0.09082909, -0.041811302, 0.029802004, 1.3465608, -1.1405544)
+mesh = SubResource("SphereMesh_f54cj")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.09999055, -0.0012492705, -0.0005750759, -3.6893702e-10, 0.04181525, -0.09083769, 0.0013752737, -0.09082909, -0.041811302, -0.13653813, 1.3465608, -1.1382664)
+mesh = SubResource("SphereMesh_f54cj")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.06575094, -0.0017982534, -0.0007842355, 5.158228e-10, 0.22496806, -0.033143494, 0.0009043403, -0.13074353, -0.057018638, 0.020175183, 1.1244934, -1.0305433)
+mesh = SubResource("CapsuleMesh_7mpfh")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.06575094, -0.0017982534, -0.0007842355, 5.158228e-10, 0.22496806, -0.033143494, 0.0009043403, -0.13074353, -0.057018638, -0.13408722, 1.128437, -1.0284215)
+mesh = SubResource("CapsuleMesh_7mpfh")
+
+[node name="Pivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3181647, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.03152156, 1.3493642, -1.1701019)
+mesh = SubResource("SphereMesh_7mpfh")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.13763729, 1.3493642, -1.1701019)
+mesh = SubResource("SphereMesh_7mpfh")
+
+[node name="Rightpunchtimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="Leftpunchtimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="BallMode" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 3.0017507, 0, 0, 0, 3.432271, 0, 0, 0.59953487)
+visible = false
+mesh = SubResource("SphereMesh_m06q3")
