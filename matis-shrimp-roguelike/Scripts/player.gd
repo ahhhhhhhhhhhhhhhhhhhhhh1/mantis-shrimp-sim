@@ -31,7 +31,10 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
-	velocity *= 0.99 #water resistance
+	velocity *= 0.99 # water resistance
+	
+	if Input.is_action_just_pressed("jump"):
+		global.flash()
 
 func get_camera_direction_vector(came: Camera3D, speed: float) -> Vector3:
 	var forward = -came.global_transform.basis.z
