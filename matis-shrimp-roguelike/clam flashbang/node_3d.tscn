@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfig35ws52cjs"]
+[gd_scene load_steps=11 format=3 uid="uid://jnn0u6kxlxef"]
 
 [ext_resource type="Shader" uid="uid://bxykrcbgx00l4" path="res://clam flashbang/tehe.gdshader" id="1_noarx"]
 [ext_resource type="Script" uid="uid://biv3hv6ktxqhg" path="res://clam flashbang/camera_3d.gd" id="2_a0tk4"]
