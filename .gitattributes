@@ -1,3 +1,4 @@
-*.tscn text
-*.tres text
+*.tscn merge=ours
+*.tres merge=ours
+*.res merge=ours
 *.gd text

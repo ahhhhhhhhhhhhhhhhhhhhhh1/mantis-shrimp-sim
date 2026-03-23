@@ -7,7 +7,6 @@ const mouse_sensitivity = 0.003
 var turn_speed = 6.0
 @onready var leftarm = $LeftArm
 @onready var rightarm = $RightArm
-@onready var camera = $Pivot/Camera3D
 @onready var lefttimer = $Leftpunchtimer
 @onready var righttimer = $Rightpunchtimer
 @onready var enemydetection = $Detect/EnemyDetection

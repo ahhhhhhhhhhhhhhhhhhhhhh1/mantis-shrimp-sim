@@ -33,4 +33,5 @@ func _process(delta: float) -> void:
 		player.stop()
 		diddy = 0
 	else:
-		player.volume_db = clamp((-50 + (diddy * 50)), -50, 0)
+		player.volume_db = 10 ** (20 / clamp((-50 + (diddy * 50)), -50, 0.01)) 
+		
