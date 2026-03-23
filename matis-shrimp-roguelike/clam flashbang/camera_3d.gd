@@ -8,6 +8,14 @@ var paused_position = 0
 
 func _ready() -> void:
 	mat = no.material
+	# Load your audio file from disk
+	var audio = load("res://clam flashbang/blue disco.ogg")
+	
+	audio.loop = true  # enable looping
+
+# Assign it to the AudioStreamPlayer
+	player.stream = audio
+	player.play()
 	
 
 func _process(delta: float) -> void:
@@ -29,9 +37,8 @@ func _process(delta: float) -> void:
 		mat.set_shader_parameter("a", 0)
 		if player.playing:
 			paused_position = player.get_playback_position()
-		print("paused pos: ", paused_position)
 		player.stop()
 		diddy = 0
 	else:
-		player.volume_db = 10 ** (20 / clamp((-50 + (diddy * 50)), -50, 0.01)) 
+		player.volume_db = clamp((-50 + (diddy * 50)), -50, 0) 
 		
