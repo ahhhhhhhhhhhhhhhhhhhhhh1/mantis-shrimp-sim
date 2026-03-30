@@ -12,7 +12,7 @@ var rotation_x := 0.0
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
+	global.player_obj = self
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -31,10 +31,10 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
+	global.player_pos = self.global_position
+
+
 	velocity *= 0.99 # water resistance
-	
-	if Input.is_action_just_pressed("jump"):
-		global.flash()
 
 func get_camera_direction_vector(came: Camera3D, speed: float) -> Vector3:
 	var forward = -came.global_transform.basis.z
