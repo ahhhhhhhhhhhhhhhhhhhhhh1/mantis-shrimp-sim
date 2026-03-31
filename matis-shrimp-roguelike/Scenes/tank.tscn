@@ -1,35 +1,19 @@
-[gd_scene load_steps=12 format=3 uid="uid://bvp4p3lr71gfx"]
+[gd_scene load_steps=6 format=3 uid="uid://bvp4p3lr71gfx"]
 
-[ext_resource type="Texture2D" uid="uid://ceumkvcyyhp7y" path="res://textures/4K-brown_sand_plaster-diffuse.jpg" id="1_7f80w"]
-[ext_resource type="Texture2D" uid="uid://bb1kmqd38djox" path="res://textures/4K-brown_sand_plaster-ao.jpg" id="2_42q8f"]
-[ext_resource type="Texture2D" uid="uid://ckk1erro88xus" path="res://textures/4K-brown_sand_plaster-normal.jpg" id="3_2nc7w"]
-[ext_resource type="Texture2D" uid="uid://bcfvaf3kle5n7" path="res://textures/4K-brown_sand_plaster-displacement.jpg" id="3_vjxkb"]
 [ext_resource type="PackedScene" uid="uid://rysl8cpnevtl" path="res://Scenes/glass.tscn" id="5_2nc7w"]
-[ext_resource type="PackedScene" uid="uid://bg17rfmnbat1a" path="res://Scenes/rock.tscn" id="6_vjxkb"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjxkb"]
-albedo_texture = ExtResource("1_7f80w")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6c1wy"]
-albedo_color = Color(0, 0, 0, 1)
-albedo_texture = ExtResource("1_7f80w")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ys04"]
+albedo_color = Color(0.8862745, 0.7882353, 0.6509804, 1)
 metallic_specular = 0.0
-normal_enabled = true
-normal_texture = ExtResource("3_2nc7w")
-ao_enabled = true
-ao_texture = ExtResource("2_42q8f")
-heightmap_enabled = true
-heightmap_scale = 16.0
-heightmap_texture = ExtResource("3_vjxkb")
 
 [sub_resource type="QuadMesh" id="QuadMesh_how3p"]
-material = SubResource("StandardMaterial3D_6c1wy")
+material = SubResource("StandardMaterial3D_0ys04")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2nc7w"]
-size = Vector3(0.1328125, 5.015442, 10.950928)
+size = Vector3(0.022949219, 5.015442, 10.950928)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vjxkb"]
-size = Vector3(0.1328125, 4.751831, 5.286865)
+size = Vector3(0.3425293, 4.751831, 5.286865)
 
 [node name="tank" type="StaticBody3D"]
 
@@ -37,13 +21,8 @@ size = Vector3(0.1328125, 4.751831, 5.286865)
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 10, 0, 2.335, -1.02066096e-07)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, -2.1855695e-07, 5, 0, -5, -2.1855695e-07, 0, -0.115, 2.5)
-material_override = SubResource("StandardMaterial3D_vjxkb")
-mesh = SubResource("QuadMesh_how3p")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, -2.1855695e-07, 5, 0, -5, -2.1855695e-07, 0, -0.115, -2.5)
-material_override = SubResource("StandardMaterial3D_vjxkb")
+transform = Transform3D(5, 0, 0, 0, -4.371139e-07, 5, 0, -10, -2.1855695e-07, 0, -0.115, 0)
+cast_shadow = 0
 mesh = SubResource("QuadMesh_how3p")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -51,7 +30,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.563856, 2.4661736, 0)
 shape = SubResource("BoxShape3D_2nc7w")
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, 0, 1, 0.009421095, -0.07156218, 0)
+transform = Transform3D(-4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, 0, 1, 0.009421093, -0.12649381, 0)
 shape = SubResource("BoxShape3D_2nc7w")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
@@ -59,18 +38,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5501041, 2.4661736, 0)
 shape = SubResource("BoxShape3D_2nc7w")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 2.466, -5.051235)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 2.466, -5.051235)
 shape = SubResource("BoxShape3D_vjxkb")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 2.466, 5.0753365)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.583506e-09, 2.466, 5.180195)
 shape = SubResource("BoxShape3D_vjxkb")
-
-[node name="rock" parent="." instance=ExtResource("6_vjxkb")]
-transform = Transform3D(-0.8277087, 0, 0.9300125, 0, 1.245, 0, -0.9300125, 0, -0.8277087, 0, 0, -1.4752243)
-
-[node name="rock2" parent="." instance=ExtResource("6_vjxkb")]
-transform = Transform3D(0.865912, 0, -0.8945509, 0, 1.2449999, 0, 0.8945509, 0, 0.865912, -0.36246508, 0, 0.567328)
-
-[node name="rock3" parent="." instance=ExtResource("6_vjxkb")]
-transform = Transform3D(0.8973018, 0.071667515, 0.8600806, 0.013086274, -1.2416873, 0.089812726, 0.8629622, -0.055689782, -0.8956675, -0.36246508, 1.8321996, -0.8143616)

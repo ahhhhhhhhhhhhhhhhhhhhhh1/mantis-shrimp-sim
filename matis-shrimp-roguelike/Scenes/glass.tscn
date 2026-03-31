@@ -2,12 +2,10 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vclmm"]
 transparency = 1
-albedo_color = Color(0.13496615, 0.55351734, 1.1058325, 0.05882353)
-metallic = 0.28
+albedo_color = Color(1.106, 1.106, 1.106, 0.059)
+metallic = 0.8
 metallic_specular = 1.0
 roughness = 0.01
-refraction_enabled = true
-refraction_scale = 0.53
 
 [sub_resource type="BoxMesh" id="BoxMesh_vclmm"]
 material = SubResource("StandardMaterial3D_vclmm")
