@@ -10,7 +10,9 @@ var turn_speed = 6.0
 @onready var camera = $Pivot/Camera3D
 @onready var lefttimer = $Leftpunchtimer
 @onready var righttimer = $Rightpunchtimer
-@onready var enemydetection = $Detect/EnemyDetection
+@onready var leftEnemyDetection = $Detect/EnemyDetectionLeft
+@onready var RightEnemyDetection = $Detect/EnemyDetectionRight
+var knockbackamt = 20
 var leftpunching = false
 var hashit = false
 var rightpunching = false
@@ -20,7 +22,7 @@ var ball_mode = false
 var objects = [] 
 
 func _ready():
-	global.player_health = 100
+	global.player_health = 100000000000
 	lefttimer.start()
 	righttimer.start()
 	objects = [$Legs, $Legs2, $Legs3, $Legs4, $Legs5, $Legs6, $Legs7, $Legs8, $Legs9, $Legs10]
@@ -95,7 +97,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Sprint"):
 		print("sprinting")
 		velocity += get_camera_direction_vector(cam, 100)
-		#This is not particuarly very good so u do better one
+		
 	move_and_slide()
 	var move_dir = 0.0
 	var turn_dir = 0.0
@@ -129,26 +131,31 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
 	move_and_slide()
-
-	for body in $Detect.get_overlapping_bodies():
-		if leftpunching or rightpunching or superpunching:
+	for body in $DetectRight.get_overlapping_bodies():
+		if rightpunching or superpunching:
 			if hashit == false:
-				print(hashit)
-				print(body)
 				hashit = true
 				if body.is_in_group("enemy"):
-					
 					if body != null:
 						body.damagetoenemy(30)
+						var direction = (body.global_position - global_position).normalized()
+						body.linear_velocity = direction * 10
+						await get_tree().create_timer(0.3).timeout
+	for body in $Detect.get_overlapping_bodies():
+		if leftpunching or superpunching:
+			if hashit == false:
+				hashit = true
+				if body.is_in_group("enemy"):
+					if body != null:
+						body.damagetoenemy(30)
+						var direction = (body.global_position - global_position).normalized()
+						body.linear_velocity = direction * 10
 						await get_tree().create_timer(0.3).timeout
 		
-func get_camera_direction_vector(came: Camera3D, sped: float) -> Vector3:
+func get_camera_direction_vector(came, sped: float) -> Vector3:
 	var forward = -came.global_transform.basis.z
 	return forward.normalized() * sped
-	
-
 
 func _on_detect_part_2_body_entered(body: Node3D) -> void:
 	if body.is_in_group("enemy"):
 		damage(20)
-		

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bsxoapx446ag3"]
+[gd_scene load_steps=12 format=3 uid="uid://bsxoapx446ag3"]
 
 [ext_resource type="Script" uid="uid://bwbmbcynbo2xx" path="res://Scripts/gordans_scene.gd" id="1_gbcld"]
 
@@ -23,11 +23,14 @@ material = SubResource("StandardMaterial3D_f54cj")
 [sub_resource type="SphereMesh" id="SphereMesh_m06q3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7mpfh"]
-size = Vector3(1.6736984, 1.163147, 1.9130402)
+size = Vector3(0.89886093, 1.163147, 1.9130402)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f54cj"]
 radius = 1.2753906
 height = 5.0722046
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f54cj"]
+size = Vector3(1, 1.1486816, 2.0002441)
 
 [node name="Gordans scene" type="CharacterBody3D"]
 script = ExtResource("1_gbcld")
@@ -89,11 +92,11 @@ mesh = SubResource("CapsuleMesh_7mpfh")
 transform = Transform3D(-0.99990547, -0.012492648, -0.005750741, 8.7548074e-10, 0.4181524, -0.90837675, 0.013752736, -0.9082909, -0.4181129, -0.007822161, 0.31705236, -0.24971965)
 mesh = SubResource("CapsuleMesh_7mpfh")
 
-[node name="LeftArm" type="MeshInstance3D" parent="."]
+[node name="RightArm" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.29040155, 0.10426698, 0.056253586, 2.797278e-10, 0.11508933, -0.2930228, -0.13325064, -0.22723565, -0.122597, 0.561, 0, 0)
 mesh = SubResource("CapsuleMesh_7mpfh")
 
-[node name="RightArm" type="MeshInstance3D" parent="."]
+[node name="LeftArm" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.3129109, -0.050563164, -0.027279552, 4.6070485e-09, 0.1150893, -0.29302278, 0.06461849, -0.24484898, -0.13209958, -0.564, 0, 0)
 mesh = SubResource("CapsuleMesh_7mpfh")
 
@@ -143,8 +146,8 @@ mesh = SubResource("SphereMesh_m06q3")
 [node name="Detect" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0054729)
 
-[node name="EnemyDetection" type="CollisionShape3D" parent="Detect"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.124866486, 0.38339233, -2.1038072)
+[node name="EnemyDetectionLeft" type="CollisionShape3D" parent="Detect"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5319606, 0.38339233, -2.1038072)
 shape = SubResource("BoxShape3D_7mpfh")
 
 [node name="DetectPart2" type="Area3D" parent="."]
@@ -152,6 +155,12 @@ shape = SubResource("BoxShape3D_7mpfh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetectPart2"]
 transform = Transform3D(1, 0, 0, 0, 0.06547278, 0.99785435, 0, -0.99785435, 0.06547278, 0, -0.049078614, 0.74799484)
 shape = SubResource("CapsuleShape3D_f54cj")
+
+[node name="DetectRight" type="Area3D" parent="."]
+
+[node name="EnemyDetectionRight" type="CollisionShape3D" parent="DetectRight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43592966, 0.37487793, -3.0658813)
+shape = SubResource("BoxShape3D_f54cj")
 
 [connection signal="body_entered" from="Detect" to="." method="_on_detect_body_entered"]
 [connection signal="body_entered" from="DetectPart2" to="." method="_on_detect_part_2_body_entered"]
