@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvp4p3lr71gfx"]
+
+[ext_resource type="PackedScene" uid="uid://rysl8cpnevtl" path="res://Scenes/glass.tscn" id="5_2nc7w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ys04"]
+albedo_color = Color(0.8862745, 0.7882353, 0.6509804, 1)
+metallic_specular = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_how3p"]
+material = SubResource("StandardMaterial3D_0ys04")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2nc7w"]
+size = Vector3(0.022949219, 5.015442, 10.950928)
+
+[node name="tank" type="StaticBody3D"]
+
+[node name="MeshInstance3D2" parent="." instance=ExtResource("5_2nc7w")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 10, 0, 2.335, -1.02066096e-07)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, -4.371139e-07, 5, 0, -10, -2.1855695e-07, 0, -0.115, 0)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_how3p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.563856, 2.4661736, 0)
+shape = SubResource("BoxShape3D_2nc7w")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 2.466, 5.037)
+shape = SubResource("BoxShape3D_2nc7w")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 2.466, -5.0098515)
+shape = SubResource("BoxShape3D_2nc7w")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, 0, 1, 0.009421093, -0.12649381, 0)
+shape = SubResource("BoxShape3D_2nc7w")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5501041, 2.4661736, 0)
+shape = SubResource("BoxShape3D_2nc7w")

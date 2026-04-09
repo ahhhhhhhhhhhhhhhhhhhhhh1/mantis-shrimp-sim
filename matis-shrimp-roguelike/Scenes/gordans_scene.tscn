@@ -32,8 +32,9 @@ height = 5.0722046
 [sub_resource type="BoxShape3D" id="BoxShape3D_f54cj"]
 size = Vector3(1, 1.1486816, 2.0002441)
 
-[node name="Gordans scene" type="CharacterBody3D"]
+[node name="Gordans scene" type="CharacterBody3D" node_paths=PackedStringArray("cam")]
 script = ExtResource("1_gbcld")
+cam = NodePath("Pivot/Camera3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-0.9998783, -0.006980549, -0.013962128, 0.013961791, 9.7473436e-05, -0.9999025, 0.0069812294, -0.99997574, -6.10304e-10, 0.008459957, 0.029743224, 0.9068227)

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://rysl8cpnevtl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vclmm"]
+transparency = 1
+albedo_color = Color(1.106, 1.106, 1.106, 0.059)
+metallic = 0.8
+metallic_specular = 1.0
+roughness = 0.01
+
+[sub_resource type="BoxMesh" id="BoxMesh_vclmm"]
+material = SubResource("StandardMaterial3D_vclmm")
+flip_faces = true
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_vclmm")

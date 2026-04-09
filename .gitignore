@@ -14,3 +14,7 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# extra shit chatgpt said to add
+.export/
+.godot/

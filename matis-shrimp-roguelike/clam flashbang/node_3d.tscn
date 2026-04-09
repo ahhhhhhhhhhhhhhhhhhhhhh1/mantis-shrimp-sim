@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://jnn0u6kxlxef"]
+
+[ext_resource type="Shader" uid="uid://bxykrcbgx00l4" path="res://clam flashbang/tehe.gdshader" id="1_noarx"]
+[ext_resource type="Script" uid="uid://biv3hv6ktxqhg" path="res://clam flashbang/camera_3d.gd" id="2_a0tk4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r3fl7"]
+shader = ExtResource("1_noarx")
+
+[sub_resource type="Sky" id="Sky_jka67"]
+sky_material = SubResource("ShaderMaterial_r3fl7")
+
+[sub_resource type="Environment" id="Environment_i5arm"]
+background_mode = 2
+sky = SubResource("Sky_jka67")
+
+[sub_resource type="BoxMesh" id="BoxMesh_r3fl7"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_i5arm")
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("no", "player")]
+script = ExtResource("2_a0tk4")
+no = NodePath("")
+player = NodePath("")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.3386064)
+mesh = SubResource("BoxMesh_r3fl7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.7937251, 0.6082767, 0, -0.6082767, 0.7937251, 0, 0, 2.5547957)

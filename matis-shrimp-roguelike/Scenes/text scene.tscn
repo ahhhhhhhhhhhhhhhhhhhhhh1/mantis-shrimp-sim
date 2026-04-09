@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4ag8c5fhoqeg"]
+
+[ext_resource type="PackedScene" uid="uid://bvp4p3lr71gfx" path="res://Scenes/tank.tscn" id="1_1gcgc"]
+[ext_resource type="PackedScene" uid="uid://bsxoapx446ag3" path="res://Scenes/gordans_scene.tscn" id="2_f6vgg"]
+[ext_resource type="PackedScene" uid="uid://iheguw4lurdf" path="res://Scenes/didler crab.tscn" id="3_g864o"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_nng3w"]
+vertices = PackedVector3Array(-24.684326, -0.8999996, -54.25464, -24.684326, -0.8999996, -50.50464, 24.815674, -0.8999996, -50.50464, 24.815674, -0.8999996, -54.25464, -24.684326, 48.85, -51.75464, -24.684326, 48.85, -49.25464, 24.815674, 48.85, -49.25464, 24.815674, 48.85, -51.75464, -24.434326, -0.8999996, -49.25464, -24.434326, -0.6499996, 49.49536, 24.315674, -0.6499996, 49.49536, 24.315674, -0.8999996, -49.25464, -24.684326, 48.85, 50.49536, -24.684326, 48.85, 53.24536, 24.815674, 48.85, 53.24536, 24.815674, 48.85, 50.49536, -24.684326, -0.8999996, 50.74536, -24.684326, -0.8999996, 54.24536, 24.815674, -0.8999996, 54.24536, 24.815674, -0.8999996, 50.74536)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5), PackedInt32Array(11, 10, 8), PackedInt32Array(8, 10, 9), PackedInt32Array(15, 14, 12), PackedInt32Array(12, 14, 13), PackedInt32Array(19, 18, 16), PackedInt32Array(16, 18, 17)]
+
+[sub_resource type="Environment" id="Environment_qaxfr"]
+ambient_light_source = 3
+ambient_light_color = Color(0.64695215, 0.73376304, 1, 1)
+ambient_light_energy = 0.0
+ssr_enabled = true
+ssr_depth_tolerance = 23.61
+
+[node name="main" type="NavigationRegion3D"]
+navigation_mesh = SubResource("NavigationMesh_nng3w")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qaxfr")
+
+[node name="tank" parent="." instance=ExtResource("1_1gcgc")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.092683375, 0.99569565, 0, -0.99569565, 0.092683375, 0, 43.54301, 6.05048)
+light_energy = 34.15
+shadow_enabled = true
+spot_range = 80.926765
+spot_angle = 84.84
+
+[node name="Gordans scene" parent="." instance=ExtResource("2_f6vgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3436032, 5.929451, 30.344952)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("3_g864o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.204511, -0.65019166, -8.463631)

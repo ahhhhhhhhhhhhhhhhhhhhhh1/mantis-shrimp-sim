@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dr0cste724u3q"
+path="res://.godot/imported/blue disco.ogg-216fcbf7493c78d02ffc0e3f16069183.oggvorbisstr"
+
+[deps]
+
+source_file="res://clam flashbang/blue disco.ogg"
+dest_files=["res://.godot/imported/blue disco.ogg-216fcbf7493c78d02ffc0e3f16069183.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
