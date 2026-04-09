@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvp4p3lr71gfx"]
+[gd_scene load_steps=5 format=3 uid="uid://bvp4p3lr71gfx"]
 
 [ext_resource type="PackedScene" uid="uid://rysl8cpnevtl" path="res://Scenes/glass.tscn" id="5_2nc7w"]
 
@@ -11,9 +11,6 @@ material = SubResource("StandardMaterial3D_0ys04")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2nc7w"]
 size = Vector3(0.022949219, 5.015442, 10.950928)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vjxkb"]
-size = Vector3(0.3425293, 4.751831, 5.286865)
 
 [node name="tank" type="StaticBody3D"]
 
@@ -29,6 +26,14 @@ mesh = SubResource("QuadMesh_how3p")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.563856, 2.4661736, 0)
 shape = SubResource("BoxShape3D_2nc7w")
 
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 2.466, 5.037)
+shape = SubResource("BoxShape3D_2nc7w")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 2.466, -5.0098515)
+shape = SubResource("BoxShape3D_2nc7w")
+
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, 0, 1, 0.009421093, -0.12649381, 0)
 shape = SubResource("BoxShape3D_2nc7w")
@@ -36,11 +41,3 @@ shape = SubResource("BoxShape3D_2nc7w")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5501041, 2.4661736, 0)
 shape = SubResource("BoxShape3D_2nc7w")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 2.466, -5.051235)
-shape = SubResource("BoxShape3D_vjxkb")
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.583506e-09, 2.466, 5.180195)
-shape = SubResource("BoxShape3D_vjxkb")

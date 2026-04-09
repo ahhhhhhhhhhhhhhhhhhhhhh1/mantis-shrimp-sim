@@ -18,3 +18,5 @@ class player: # values to base enemy stats on. (ask riley)
 		const charge_time = 5
 	const shield = 50
 	const regen = 0.1 # 1/sec
+
+var difficulty = 1
